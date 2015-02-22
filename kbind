@@ -50,7 +50,7 @@ kbind_base () {
 
         for var in "$@" " =:"; do
             if [ "${var:0:2}" == "$input"= ]; then
-                ${var:2}
+                eval "${var:2}"
                 test -n "$statuscommand" && sh -c "$color_cmd $statuscommand"
                 break
             fi
